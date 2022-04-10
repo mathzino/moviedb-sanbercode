@@ -19,13 +19,6 @@ const Demo = () => {
       .then((res) => {
         console.log(res);
       });
-    //   .then(() => {
-    //     let movie = dataMovie.find((el) => el.id === currentId);
-    //     movie = inputMovie;
-    //     history.push("/dashboard/movie/table");
-    //     // message.success("Berhasil menambahkan data");
-    //     setFetchStatus(true);
-    //   });
   };
 
   const onFinishFailed = (errorInfo) => {

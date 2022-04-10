@@ -1,14 +1,10 @@
 import React, { useEffect, useContext } from "react";
-import { GameContext } from "./context/GameContext";
-import { Form, Input, Button, Checkbox } from "antd";
+import { GameContext } from "../../../context/GameContext";
 
 const GameForm = (props) => {
-  function onChange(e) {
-    console.log(`${e.target.checked}`);
-  }
   const { State, Function } = useContext(GameContext);
-  const { dataGame, setDataGame, fetchStatus, setFetchStatus, inputGame, setInputGame, currentId, setCurrentId } = State;
-  const { getDataGame, handleChangeGame, handleSubmitGame } = Function;
+  const { inputGame, setInputGame } = State;
+  const { handleChangeGame, handleSubmitGame } = Function;
   useEffect(() => {}, []);
 
   const handleCheckbox = (event) => {
@@ -26,10 +22,6 @@ const GameForm = (props) => {
           <label>Name</label>
           <input required onChange={handleChangeGame} type="text" name="name" value={inputGame.name} />
           <br />
-          {/* <label>Description</label>
-          <br />
-          <textarea required style={{ width: "100%" }} onChange={handleChangeGame} name="description" type="text" value={inputGame.description}></textarea> */}
-          <label>Release</label>
           <input required onChange={handleChangeGame} type="text" name="release" value={inputGame.release} />
           <br />
           <label>Platform</label>

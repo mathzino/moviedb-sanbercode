@@ -1,14 +1,14 @@
 import Cookies from "js-cookie";
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import logo from "./Meta.png";
-import { UserContext } from "./UserContext";
+import logo from "../../../Meta.png";
+import { UserContext } from "../../../context/UserContext";
 import { useHistory } from "react-router";
 import "antd/dist/antd.css"; // or 'antd/dist/antd.less'
-import "./App.css";
-import { Layout, Menu, Breadcrumb } from "antd";
-import { UserOutlined, LaptopOutlined, NotificationOutlined } from "@ant-design/icons";
-const { Header, Content, Sider } = Layout;
+import "../../../styles/App.css";
+import { Layout, Menu } from "antd";
+
+const { Header } = Layout;
 const HeaderComp = () => {
   const { setLoginStatus } = useContext(UserContext);
   let history = useHistory();

@@ -1,16 +1,15 @@
 import React, { useEffect, useContext, useState } from "react";
-import { Layout, Menu, Breadcrumb } from "antd";
-import { UserOutlined, LaptopOutlined, NotificationOutlined } from "@ant-design/icons";
-import { Table } from "antd";
-import { MovieContext } from "./context/MovieContext";
-import { HomeOutlined, SettingFilled, SmileOutlined, SyncOutlined, LoadingOutlined, EditOutlined, DeleteOutlined } from "@ant-design/icons";
+import { Layout } from "antd";
 
-import { Input, Space } from "antd";
-import { AudioOutlined } from "@ant-design/icons";
+import { Table } from "antd";
+import { MovieContext } from "../../../context/MovieContext";
+import { EditOutlined, DeleteOutlined } from "@ant-design/icons";
+
+import { Input } from "antd";
 
 const { Search } = Input;
-const { SubMenu } = Menu;
-const { Header, Content, Sider } = Layout;
+
+const { Content } = Layout;
 const TableMovie = () => {
   const [inputFilter, setInputFilter] = useState({
     genre: "",

@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 import "antd/dist/antd.css";
-import Navbar from "../Navbar";
+import Navbar from "../component/organism/Navbar/Navbar";
 
-import { Layout, Menu, Breadcrumb } from "antd";
-import Footers from "../Footer";
-import { DesktopOutlined, PieChartOutlined, FileOutlined, TeamOutlined, UserOutlined, LaptopOutlined, NotificationOutlined } from "@ant-design/icons";
+import { Layout, Menu } from "antd";
+import Footers from "../component/organism/Footer/Footer";
 
 import Cookies from "js-cookie";
-import HeaderComp from "../Header";
+import HeaderComp from "../component/organism/Header/Header";
 const { Header, Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
 

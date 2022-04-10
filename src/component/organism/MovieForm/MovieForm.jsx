@@ -1,5 +1,5 @@
 import React, { useEffect, useContext } from "react";
-import { MovieContext } from "./context/MovieContext";
+import { MovieContext } from "../../../context/MovieContext";
 const MovieForm = (props) => {
   const { StateMovie, FunctionMovie } = useContext(MovieContext);
   const { dataMovie, setDataMovie, fetchStatus, setFetchStatus, inputMovie, setInputMovie, currentId, setCurrentId } = StateMovie;

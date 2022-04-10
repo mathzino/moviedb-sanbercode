@@ -2,7 +2,7 @@ import React from "react";
 import { Layout, Menu, Breadcrumb } from "antd";
 import { UserOutlined, LaptopOutlined, NotificationOutlined, DingtalkOutlined } from "@ant-design/icons";
 import { Link } from "react-router-dom";
-import { UserContext } from "./UserContext";
+import { UserContext } from "../../../context/UserContext";
 import Cookies from "js-cookie";
 
 const { SubMenu } = Menu;

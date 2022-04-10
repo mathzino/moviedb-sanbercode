@@ -1,16 +1,15 @@
 import React, { useEffect, useContext, useState } from "react";
-import { Layout, Menu, Breadcrumb } from "antd";
-import { UserOutlined, LaptopOutlined, NotificationOutlined } from "@ant-design/icons";
-import { Table } from "antd";
-import { GameContext } from "./context/GameContext";
-import { HomeOutlined, SettingFilled, SmileOutlined, SyncOutlined, LoadingOutlined, EditOutlined, DeleteOutlined } from "@ant-design/icons";
+import { Layout } from "antd";
 
-import { Input, Space } from "antd";
-import { AudioOutlined } from "@ant-design/icons";
+import { Table } from "antd";
+import { GameContext } from "../../../context/GameContext";
+import { EditOutlined, DeleteOutlined } from "@ant-design/icons";
+
+import { Input } from "antd";
 
 const { Search } = Input;
-const { SubMenu } = Menu;
-const { Header, Content, Sider } = Layout;
+
+const { Content } = Layout;
 const TableGame = () => {
   const [inputFilter, setInputFilter] = useState({
     genre: "",
@@ -20,9 +19,7 @@ const TableGame = () => {
   let { State, Function } = useContext(GameContext);
   let { dataGame, setDataGame, fetchStatus, setFetchStatus } = State;
   let { getDataGame, handleDeleteGame, handleEditGame } = Function;
-  //   let shorten = (text, max) => {
-  //     return text && text.length > max ? text.slice(0, max).split(" ").slice(0, -1).join(" ") : text;
-  //   };
+
   useEffect(() => {
     if (fetchStatus) {
       getDataGame();
@@ -67,7 +64,7 @@ const TableGame = () => {
     let data = dataGame;
     data = data.filter((value) => {
       let genre = value.genre.toLowerCase().includes(inputFilter.genre.toLowerCase());
-      // let genre = filter.genre.toLowerCase() === inputFilter.genre.toLowerCase();
+
       let release = parseInt(value.release) >= parseInt(inputFilter.release);
       let platform = value.platform.toLowerCase().includes(inputFilter.platform.toLowerCase());
       return genre || release || platform;
@@ -102,8 +99,6 @@ const TableGame = () => {
       rating: "",
     });
     console.log(inputFilter);
-
-    // getDataGame();
     setFetchStatus(true);
   };
   const columns = [
@@ -126,9 +121,6 @@ const TableGame = () => {
       dataIndex: "name",
       key: "name",
       sorter: (a, b) => a.name.length - b.name.length,
-      //   sortOrder: sortedInfo.columnKey === "title" && sortedInfo.order,
-      //   ellipsis: true,
-      //   sortDirections: ["descend"],
       multiple: 2,
     },
 

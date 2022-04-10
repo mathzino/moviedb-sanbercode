@@ -2,7 +2,7 @@ import React, { useEffect, useState, useContext } from "react";
 
 import { Card, Space } from "antd";
 
-import { MovieContext } from "./context/MovieContext";
+import { MovieContext } from "../../../context/MovieContext";
 const { Meta } = Card;
 const Movie = (props) => {
   let { StateMovie, FunctionMovie } = useContext(MovieContext);

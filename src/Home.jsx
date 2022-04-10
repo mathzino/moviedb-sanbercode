@@ -10,7 +10,7 @@ import { MovieContext } from "./context/MovieContext";
 const { Meta } = Card;
 const Home = () => {
   let { State, Function } = useContext(GameContext);
-  let { dataGame, setDataGame, fetchStatus, setFetchStatus, currentId, setCurrentId, inputGame, setInputGame } = State;
+  let { dataGame, fetchStatus, setFetchStatus } = State;
   let { getDataGame, handleChangeGame, handleSubmitGame, handleDeleteGame, handleEditGame } = Function;
   let { StateMovie, FunctionMovie } = useContext(MovieContext);
   let { dataMovie, setDataMovie, inputMovie, setInputMovie } = StateMovie;

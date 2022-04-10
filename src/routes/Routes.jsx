@@ -1,32 +1,24 @@
-import React, { useContext, useEffect } from "react";
+import React from "react";
 import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
-import Login from "./Login";
-import { UserProvider } from "./UserContext";
-import Register from "./Register";
+import Login from "../component/organism/Login/Login";
+import { UserProvider } from "../context/UserContext";
+import Register from "../component/organism/Register/Register";
 import Cookies from "js-cookie";
-import HeaderComp from "./Header";
-import Home from "./Home";
+import Home from "../Home";
 // import Dashboard from "./Dashbord";
-import Navbar from "./Navbar";
-import { Layout, Menu, Breadcrumb } from "antd";
-import { UserOutlined, LaptopOutlined, NotificationOutlined } from "@ant-design/icons";
-import TableMovie from "./TableMovie";
-import { MovieProvider } from "./context/MovieContext";
-import { GameProvider } from "./context/GameContext";
-import MovieForm from "./MovieForm";
-import GameForm from "./GameForm";
-import { useLocation } from "react-router-dom";
-import ChangePassword from "./ChangePassword";
-import TableGame from "./TableGame";
-import Movie from "./Movie";
-import Game from "./Game";
-import Footers from "./Footer";
-import Layouts from "./Layout/Layout";
+import TableMovie from "../component/organism/TableMovie/TableMovie";
+import { MovieProvider } from "../context/MovieContext";
+import { GameProvider } from "../context/GameContext";
+import MovieForm from "../component/organism/MovieForm/MovieForm";
+import GameForm from "../component/organism/GameForm/GameForm";
+import ChangePassword from "../component/organism/ChangePassword/ChangePassword";
+import TableGame from "../component/organism/TableGame/TableGame";
+import Movie from "../component/organism/Movie/Movie";
+import Game from "../component/organism/Game/Game";
 
-const { SubMenu } = Menu;
-const { Header, Content, Sider } = Layout;
+import Layouts from "../Layout/Layout";
+
 const Routes = () => {
-  const { loginStatus, setLoginStatus } = UserProvider;
   const LoginRoute = ({ ...props }) => {
     if (Cookies.get("token") !== undefined) {
       return <Redirect to="/" />;
@@ -48,12 +40,6 @@ const Routes = () => {
         <UserProvider>
           <MovieProvider>
             <GameProvider>
-              {/* <Layout>
-                <HeaderComp />
-                <Layout> */}
-              {/* {Cookies.get("token") !== undefined && <Navbar />}
-                  <Layout> */}
-              {/* <Layout style={{ padding: "0 " }}> */}
               <Switch>
                 <Route path="/" exact>
                   <Layouts content={<Home />} />

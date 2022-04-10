@@ -1,7 +1,7 @@
-import React, { useContext } from "react";
+import React from "react";
 
-import { UserProvider } from "./UserContext";
-import Routes from "./Routes";
+import { UserProvider } from "./context/UserContext";
+import Routes from "./routes/Routes";
 const App = () => {
   return (
     <>

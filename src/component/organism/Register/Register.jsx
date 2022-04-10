@@ -1,6 +1,5 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import axios from "axios";
-import Cookies from "js-cookie";
 import { useHistory } from "react-router";
 
 const Register = () => {

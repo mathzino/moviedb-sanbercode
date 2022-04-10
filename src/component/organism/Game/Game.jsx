@@ -1,8 +1,6 @@
 import React, { useEffect, useState, useContext } from "react";
-import { GameContext } from "./context/GameContext";
+import { GameContext } from "../../../context/GameContext";
 import { Card, Space } from "antd";
-import { Skeleton, Switch, Avatar } from "antd";
-import { EditOutlined, EllipsisOutlined, SettingOutlined } from "@ant-design/icons";
 
 const { Meta } = Card;
 
@@ -14,8 +12,8 @@ const Game = (props) => {
   };
 
   let { State, Function } = useContext(GameContext);
-  let { dataGame, setDataGame, fetchStatus, setFetchStatus, currentId, setCurrentId, inputGame, setInputGame } = State;
-  let { getDataGame, handleChangeGame, handleSubmitGame, handleDeleteGame, handleEditGame } = Function;
+  let { dataGame, fetchStatus, setFetchStatus } = State;
+  let { getDataGame } = Function;
   useEffect(() => {
     if (fetchStatus) {
       getDataGame();
