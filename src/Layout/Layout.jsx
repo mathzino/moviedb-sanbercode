@@ -11,6 +11,7 @@ const { Header, Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
 
 const Layouts = (props) => {
+  console.log(props);
   return (
     <>
       <Layout className="layout">

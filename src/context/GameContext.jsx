@@ -103,6 +103,7 @@ export const GameProvider = (props) => {
     });
   };
   const handleEditGame = (e) => {
+    console.log(e.target);
     let dataId = e.target.value;
     axios.get(`https://backendexample.sanbersy.com/api/data-game/${dataId}`, { headers: { Authorization: "Bearer" + Cookies.get("token") } }).then((res) => {
       let data = res.data;
